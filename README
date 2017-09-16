@@ -1,7 +1,9 @@
-Prerequisites:
+Prerequisites for compiling the source code:
 make g++ libsdl2
 
-Steps to run the game:
+Steps to compile the game:
 1) Download the source code.
 2) run make command.
 3) The built binary will be available in bin folder.
+
+Note: Binary in bin folder will run only on x86_64 GNU/Linux. For other systems you have to compile the source code.

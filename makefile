@@ -1,4 +1,4 @@
-FLAGS=-std=c++11 -I/usr/include/SDL2 -I$(HELLO)/include/ -lSDL2
+FLAGS=-std=c++11 -I/usr/include/SDL2 -Iinclude/ -lSDL2
 CXXFLAGS=$(CPPFLAGS)
 LDFLAGS=
 LDLIBS=
