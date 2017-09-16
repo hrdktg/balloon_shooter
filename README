@@ -1,0 +1,7 @@
+Prerequisites:
+make g++ libsdl2
+
+Steps to run the game:
+1) Download the source code.
+2) run make command.
+3) The built binary will be available in bin folder.
