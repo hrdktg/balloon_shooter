@@ -1,6 +1,8 @@
 #include <SDL.h>
+#include <SDL_image.h>
 #include <iostream>
 #include <stdio.h>
+#include "TextureManager.h"
 using namespace std;
 
 class Game {
@@ -10,17 +12,19 @@ class Game {
 	const int SCR_H=480;
 	bool isRunning;
 
-	SDL_Window* ptr_window=0;
-	SDL_Renderer* ptr_renderer=0;
+	int curCol;
 
+	SDL_Window* window=0;
+	SDL_Renderer* renderer=0;
+	
 	public:
 	Game() 
 	{
-		cout<<"Nothing\n";
+		cout<<"Loading\n";
        	}
 	~Game()
 	{
-		cout<<"Nothing2\n";
+		cout<<"Bye\n";
        	}
 
 	bool init(const char* title);

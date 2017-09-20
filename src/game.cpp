@@ -1,15 +1,16 @@
 #include "game.h"
 
-
 bool Game::init(const char* title)
 {
+	IMG_Init(IMG_INIT_JPG);
+	IMG_Init(IMG_INIT_PNG);
 	if(SDL_Init(SDL_INIT_EVERYTHING)>=0)
 	{
-		ptr_window=SDL_CreateWindow(title,SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,SCR_W,SCR_H,SDL_WINDOW_SHOWN);
+		window=SDL_CreateWindow(title,SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,SCR_W,SCR_H,SDL_WINDOW_SHOWN);
 
-		if(ptr_window!=0)
+		if(window!=0)
 		{
-			ptr_renderer=SDL_CreateRenderer(ptr_window,-1,0);
+			renderer=SDL_CreateRenderer(window,-1,0);
 		}
 	}
 	else
@@ -17,26 +18,32 @@ bool Game::init(const char* title)
 		cout<<"Error\n";
 		return false;
 	}
-//Draw Window
-//Set to black
-SDL_SetRenderDrawColor(ptr_renderer,0,0,0,255);
-isRunning=true;
+	isRunning=true;
+
+	TextureManager* Instance=TextureManager::getInstance();
+	Instance->load("res/strip.png","animate",renderer);
+
+	SDL_SetRenderDrawColor(renderer, 168, 230, 255, 255);
+	SDL_RenderClear(renderer);
+	    
 return true;
 }
 
 void Game::render()
 {
-	//Clear the window to show black color
-	SDL_RenderClear(ptr_renderer);
+	SDL_RenderClear(renderer);
 
-	//Show the window
-	SDL_RenderPresent(ptr_renderer);
+	//m_textureManager.draw("animate",0,0,256,256,renderer);
+	TextureManager::getInstance()->drawSprite("animate",0,0,256,256,1,curCol,renderer);
+
+	SDL_RenderPresent(renderer);
 }
 
 void Game::clean()
 {
-	SDL_DestroyWindow(ptr_window);
-	SDL_DestroyRenderer(ptr_renderer);
+	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(renderer);
+	IMG_Quit();
 	SDL_Quit();
 }
 
@@ -58,5 +65,5 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	cout<<"hur\n";
+	curCol=int(((SDL_GetTicks()/60)%6));
 }
