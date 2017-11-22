@@ -3,21 +3,19 @@
 using namespace std;
 
 
-Game* ptr_game=0;
 
 int main(int argc,char* args[])
 {
-	ptr_game=new Game();
-	ptr_game->init("Hello");
+	Game::getInstance()->init("Hello");
 
-	while(ptr_game->running())
+	while(Game::getInstance()->running())
 	{
-		ptr_game->handleEvents();
-		ptr_game->update();
-		ptr_game->render();
+		Game::getInstance()->handleEvents();
+		Game::getInstance()->update();
+		Game::getInstance()->render();
 	}
 
-	ptr_game->clean();
+	Game::getInstance()->clean();
 
 return 0;
 }

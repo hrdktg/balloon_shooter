@@ -1,5 +1,7 @@
 #include "game.h"
 
+Game* Game::pInstance=0;
+
 bool Game::init(const char* title)
 {
 	IMG_Init(IMG_INIT_JPG);
@@ -26,6 +28,11 @@ bool Game::init(const char* title)
 	SDL_SetRenderDrawColor(renderer, 168, 230, 255, 255);
 	SDL_RenderClear(renderer);
 	    
+	//m_go.load("animate",0,0,256,256);
+	//m_player.load("animate",256,256,256,256);
+	m_gameObj.push_back(new Player(new LoaderParams(0,0,256,256,"animate")));
+	m_gameObj.push_back(new Enemy(new LoaderParams(256,256,256,256,"animate")));
+	
 return true;
 }
 
@@ -33,10 +40,14 @@ void Game::render()
 {
 	SDL_RenderClear(renderer);
 
-	//m_textureManager.draw("animate",0,0,256,256,renderer);
-	TextureManager::getInstance()->drawSprite("animate",0,0,256,256,1,curCol,renderer);
+	//TextureManager::getInstance()->drawSprite("animate",0,0,256,256,1,curCol,renderer);
+	for(vector<SDLGameObject*>::size_type i=0;i!=m_gameObj.size();i++)
+	{
+		m_gameObj[i]->draw();
+	}
 
 	SDL_RenderPresent(renderer);
+	SDL_Delay(10);
 }
 
 void Game::clean()
@@ -65,5 +76,9 @@ void Game::handleEvents()
 
 void Game::update()
 {
+	for(vector<SDLGameObject*>::size_type i=0;i!=m_gameObj.size();i++)
+	{
+		m_gameObj[i]->update();
+	}
 	curCol=int(((SDL_GetTicks()/60)%6));
 }
