@@ -1,7 +1,7 @@
-#ifndef GAMEOBJECT_H_
-#define GAMEOBJECT_H_
+#ifndef SDLGAMEOBJECT_H_
+#define SDLGAMEOBJECT_H_
 #include "GameObject.h"
-#endif
+#include <iostream>
 
 class SDLGameObject : public GameObject
 {
@@ -17,6 +17,7 @@ class SDLGameObject : public GameObject
         int m_w,m_h;
 
         int m_row,m_col;
-
-        string m_textureID;
+        
+        std::string m_textureID;
 };
+#endif

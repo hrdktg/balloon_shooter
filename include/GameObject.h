@@ -1,11 +1,8 @@
+#ifndef GAMEOBJECT_H_
+#define GAMEOBJECT_H_
+#include "LoaderParams.h"
 #include <SDL.h>
 #include <SDL_image.h>
-#ifndef LOADERPARAMS_H_
-#define LOADERPARAMS_H_
-#include "LoaderParams.h"
-#endif
-using namespace std;
-
 
 class GameObject
 {
@@ -19,3 +16,4 @@ class GameObject
 		GameObject(const LoaderParams* param) {}
 		virtual ~GameObject() {}
 };
+#endif

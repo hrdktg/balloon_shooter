@@ -1,7 +1,5 @@
-#ifndef SDLGAMEOBJECT_H_
-#define SDLGAMEOBJECT_H_
 #include "SDLGameObject.h"
-#endif
+#include "LoaderParams.h"
 
 class Player: public SDLGameObject
 {

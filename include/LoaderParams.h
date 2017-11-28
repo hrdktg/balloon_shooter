@@ -1,3 +1,5 @@
+#ifndef LOADERPARAMS_H_
+#define LOADERPARAMS_H_
 #include <string>
 
 class LoaderParams
@@ -17,3 +19,4 @@ class LoaderParams
 
 		std::string m_textureID;
 };
+#endif

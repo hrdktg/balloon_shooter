@@ -1,16 +1,5 @@
 #include "TextureManager.h"
 
-/*
-TextureManager* getInstance()
-{
-	if(pInstance==0)
-	{
-		pInstance=new TextureManager();
-		return pInstance;
-	}
-	return pInstance;
-}
-*/
 TextureManager* TextureManager::pInstance=nullptr;
 
 bool TextureManager::load(string fname,string id,SDL_Renderer* pRend)

@@ -3,14 +3,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <vector>
-#ifndef TEXTUREMANAGER_H_
-#define TEXTUREMANAGER_H_
 #include "TextureManager.h"
-#endif
-#ifndef SDLGAMEOBJECT_H_
-#define SDLGAMEOBJECT_H_
 #include "SDLGameObject.h"
-#endif
 #include "Player.h"
 #include "Enemy.h"
 

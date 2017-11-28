@@ -1,7 +1,4 @@
-#ifndef SDLGAMEOBJECT_H_
-#define SDLGAMEOBJECT_H_
 #include "SDLGameObject.h"
-#endif
 
 class Enemy: public SDLGameObject
 {

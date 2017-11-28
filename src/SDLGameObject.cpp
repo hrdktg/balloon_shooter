@@ -1,15 +1,6 @@
 #include "SDLGameObject.h"
-#define SDLGAMEOBJECT_H_
-
-#ifndef TEXTUREMANAGER_H_
-#define TEXTUREMANAGER_H_
 #include "TextureManager.h"
-#endif
-
-#ifndef GAME_H_
-#define GAME_H_
 #include "game.h"
-#endif
 
 SDLGameObject::SDLGameObject(const LoaderParams* param) : GameObject(param)
 {
