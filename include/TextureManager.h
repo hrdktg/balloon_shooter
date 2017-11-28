@@ -27,7 +27,7 @@ class TextureManager {
 
 		void draw(string id,int x,int y,int w,int h,SDL_Renderer* pRend,SDL_RendererFlip flip=SDL_FLIP_NONE);
 
-		void drawSprite(string id,int x,int y,int w,int h,int curRow,int curFrame,SDL_Renderer* pRend,SDL_RendererFlip flip=SDL_FLIP_NONE);
+		void drawSprite(string id,int x,int y,int w,int h,int curRow,int curCol,SDL_Renderer* pRend,SDL_RendererFlip flip=SDL_FLIP_NONE);
 
 		map<string, SDL_Texture*> m_textureMap;
 		

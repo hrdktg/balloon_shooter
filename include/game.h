@@ -7,6 +7,7 @@
 #include "SDLGameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "InputHandler.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ class Game {
 		void update();
 		void render();
 		void clean();
+		void quit();
 
 		bool running() { return isRunning; }
 
@@ -32,6 +34,7 @@ class Game {
 		SDL_Renderer* getRenderer() const { return renderer; }
 	private:
 		static Game* pInstance;
+		//InputHandler* ihInstance=InputHandler::getInstance();
 		Game() {}
 		//Resolution of display
 		const int SCR_W=640;
@@ -44,6 +47,5 @@ class Game {
 		SDL_Renderer* renderer=0;
 
 		vector<SDLGameObject*> m_gameObj;
-
 };
 

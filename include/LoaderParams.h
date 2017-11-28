@@ -5,7 +5,7 @@
 class LoaderParams
 {
 	public:
-		LoaderParams(int x,int y,int w,int h,std::string textureID):m_x(x), m_y(y), m_w(w),m_h(h),m_textureID(textureID) {}
+		LoaderParams(std::string textureID, int x,int y,int w,int h):m_textureID(textureID), m_x(x), m_y(y), m_w(w),m_h(h) {}
 
 		int getX() const { return m_x; }
 		int getY() const { return m_y; }

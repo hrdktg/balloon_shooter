@@ -1,6 +1,6 @@
 FLAGS = -std=c++11 -I/usr/include/SDL2 -Iinclude/ -Isrc/ -lSDL2 -lSDL2_image
 SRCDIR = src/*.cpp
-SRCFILES =
+SRCFILES = include/InputHandler.h include/JoystickHandler.h
 CXXFLAGS = $(CPPFLAGS)
 LDFLAGS =
 LDLIBS =

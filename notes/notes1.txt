@@ -1,0 +1,12 @@
+Ideally we want to easily use one or more controllers with no change to our
+code. We already have a way to load in and open as many controllers that
+are plugged in, but we need to know which event corresponds to which
+controller; we do this using some information stored in the event. Each
+joystick event will have a which variable stored within it. Using this will
+allow us to find out which joystick the event came from.
+if(event.type == SDL_JOYAXISMOTION) // check the type value
+{
+int whichOne = event.jaxis.which; // get which controller
+______________________-
+
+

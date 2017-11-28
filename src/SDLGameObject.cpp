@@ -2,7 +2,7 @@
 #include "TextureManager.h"
 #include "game.h"
 
-SDLGameObject::SDLGameObject(const LoaderParams* param) : GameObject(param)
+SDLGameObject::SDLGameObject(const LoaderParams* param)
 {
     m_x=param->getX();
     m_y=param->getY();
@@ -22,6 +22,10 @@ void SDLGameObject::draw()
 
 void SDLGameObject::update() 
 {
+    if(m_textureID=="animate")
+    {
+        m_col = m_w * int((SDL_GetTicks()/100) % 6);
+    }
 }
 
 void SDLGameObject::clean()

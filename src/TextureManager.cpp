@@ -21,7 +21,7 @@ bool TextureManager::load(string fname,string id,SDL_Renderer* pRend)
 return false;
 }
 
-void TextureManager::draw(string id,int x,int y,int w,int h,SDL_Renderer* pRend,SDL_RendererFlip flip)
+void TextureManager::draw(std::string id,int x,int y,int w,int h,SDL_Renderer* pRend,SDL_RendererFlip flip)
 {
 	SDL_Rect srcRect={0,0,w,h};
 	SDL_Rect destRect={x,y,w,h};
@@ -30,9 +30,9 @@ void TextureManager::draw(string id,int x,int y,int w,int h,SDL_Renderer* pRend,
 }
 
 
-void TextureManager::drawSprite(string id,int x,int y,int w,int h,int curRow,int curCol,SDL_Renderer *pRend,SDL_RendererFlip flip)
+void TextureManager::drawSprite(std::string id, int x,int y,int w,int h,int curRow,int curCol,SDL_Renderer *pRend,SDL_RendererFlip flip)
 {
-	SDL_Rect srcRect={256*curCol, curRow-1, w, h};
+	SDL_Rect srcRect={curCol, curRow, w, h};
 	SDL_Rect destRect={x, y, w, h};
 
 	SDL_RenderCopyEx(pRend,m_textureMap[id],&srcRect,&destRect,0,0,flip);

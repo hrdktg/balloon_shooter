@@ -1,9 +1,9 @@
 #ifndef SDLGAMEOBJECT_H_
 #define SDLGAMEOBJECT_H_
-#include "GameObject.h"
+#include "LoaderParams.h"
 #include <iostream>
 
-class SDLGameObject : public GameObject
+class SDLGameObject
 {
     public:
         SDLGameObject(const LoaderParams* param);
@@ -17,7 +17,7 @@ class SDLGameObject : public GameObject
         int m_w,m_h;
 
         int m_row,m_col;
-        
+
         std::string m_textureID;
 };
 #endif

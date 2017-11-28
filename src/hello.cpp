@@ -1,4 +1,5 @@
 #include "game.h"
+#include "InputHandler.h"
 
 int main(int argc,char* args[])
 {
@@ -6,6 +7,7 @@ int main(int argc,char* args[])
 
 	while(Game::getInstance()->running())
 	{
+		//InputHandler::getInstance()->handleInputs();
 		Game::getInstance()->handleEvents();
 		Game::getInstance()->update();
 		Game::getInstance()->render();
