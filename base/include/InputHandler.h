@@ -27,6 +27,7 @@ class InputHandler : JoystickHandler, KeyboardHandler, MouseHandler {
         void handleEvents();
         void init();  
         vector2d getPos();
+        bool isKeyDown(SDL_Scancode k);
 };
 
 #endif

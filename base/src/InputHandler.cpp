@@ -39,6 +39,11 @@ vector2d InputHandler::getPos()
     return vector2d(hMouse.getX(),hMouse.getY());
 }
 
+bool InputHandler::isKeyDown(SDL_Scancode k)
+{
+    return hKey.isKeyDown(k);
+}
+
 void InputHandler::init()
 {
     

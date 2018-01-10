@@ -9,6 +9,11 @@ SDLGameObject::SDLGameObject(const LoaderParams* param)
     m_w=param->getW();
     m_h=param->getH();
 
+    m_dw=param->getDW();
+    m_dh=param->getDH();
+    isScaled=param->isScaledObj();
+    isAnim=param->isAnimObj();
+
     m_textureID=param->getTextureID();
 
     m_row=1;
@@ -22,12 +27,16 @@ void SDLGameObject::draw()
 
 void SDLGameObject::update() 
 {
-    if(m_textureID=="animate")
+    if(isAnim)
     {
         m_col = m_w * int((SDL_GetTicks()/100) % 6);
     }
 }
 
 void SDLGameObject::clean()
+{
+}
+
+void SDLGameObject::setVel(int aa,int bb)
 {
 }

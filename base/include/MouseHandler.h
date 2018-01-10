@@ -1,3 +1,5 @@
+#ifndef MOUSEHANDLER_H_
+#define MOUSEHANDLER_H_
 #include <SDL.h>
 #include "Vector2d.h"
 
@@ -16,3 +18,4 @@ class MouseHandler {
         int getX();
         int getY();
 };
+#endif

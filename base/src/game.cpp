@@ -23,16 +23,10 @@ bool Game::init(const char* title)
 	}
 	isRunning=true;
 
-	//Create Instance of TextureManager for managing texture Resources
-	TextureManager::getInstance()->load("res/strip.png","animate",renderer);
 	InputHandler::getInstance()->init();
-
-	SDL_SetRenderDrawColor(renderer, 168, 230, 255, 255);
 	SDL_RenderClear(renderer);
 
-	m_gameObj.push_back(new Player(new LoaderParams("animate",0,0,256,256)));
-	m_gameObj.push_back(new Enemy(new LoaderParams("animate",256,256,256,256)));
-	
+	gameInit();
 return true;
 }
 
@@ -64,6 +58,7 @@ void Game::handleEvents()
 
 void Game::update()
 {
+	gameLoop();
 	for(vector<SDLGameObject*>::size_type i=0;i!=m_gameObj.size();i++)
 	{
 		m_gameObj[i]->update();
@@ -73,4 +68,14 @@ void Game::update()
 void Game::quit()
 {
 	isRunning=false;
+}
+
+int Game::getSCRH()
+{
+	return SCR_H;
+}
+
+int Game::getSCRW()
+{
+	return SCR_W;
 }

@@ -1,3 +1,5 @@
+#ifndef KEYBOARDHANDLER_H_
+#define KEYBOARDHANDLER_H_
 #include <SDL.h>
 
 class KeyboardHandler
@@ -8,3 +10,4 @@ class KeyboardHandler
         void handleEvt(SDL_Event &evt);
         bool isKeyDown(SDL_Scancode key);
 };
+#endif
